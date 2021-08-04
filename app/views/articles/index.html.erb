@@ -1,0 +1,26 @@
+<h1>Articles listing page</h1>
+
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.description %></td>
+      <td>Some actions</td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
