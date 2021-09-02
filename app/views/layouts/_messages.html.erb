@@ -1,10 +1,11 @@
-<div class="container w-25 ">
-  <% flash.each do |name, messages|%>
-    <div class="alert alert-info alert-dismissible fade show shadow p-3 mb-3 rounded mt-3 text-center" role="alert">
-      <%= messages %>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-  <% end %>
-</div>
+<div id="page-content">
+  <div class="container w-25 ">
+    <% flash.each do |name, messages|%>
+      <div class="alert alert-info alert-dismissible fade show shadow p-3 mb-3 rounded mt-3 text-center" role="alert">
+        <%= messages %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
+  </div>
