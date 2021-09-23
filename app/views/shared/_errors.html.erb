@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-10">
       <div class="alert alert-secondary alert-dismissible fade show shadow p-3 mb-3 rounded" role="alert">
-        <h4 class="alert-heading text-center">The following errors prevented the article being saved</h4>
+        <h4 class="alert-heading text-center">The following errors prevented the <%= obj.class.name.downcase %> being saved</h4>
           <ul>
             <% obj.errors.full_messages.each do |error_message| %>
               <li><%= error_message %></li>
