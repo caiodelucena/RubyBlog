@@ -8,4 +8,6 @@ class User < ApplicationRecord
 
   validates :username, uniqueness: { case_sensitive: false }, presence: true, length: { minimum: 3, maximum: 25 }
   validates :email, uniqueness: { case_sensitive: false }, presence: true, format: { with: VALID_EMAIL_REGEX}, length: { maximum: 105}
+
+  has_secure_password
 end
