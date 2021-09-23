@@ -5,7 +5,10 @@
         <div class="col-6 mt-4">
           <div class="card text-center shadow mb-5 bg-white rounded">
             <div class="card-header font-italic">
-              by <%= @article.user.username.capitalize if @article.user %>
+              <% if @article.user %>
+                <%= image_tag "foto.jpg", size: 50, class:"rounded-circle mx-auto d-block shadow" %>
+                by <%= link_to @article.user.username.capitalize, @article.user, class: "text-dark" %>
+              <% end %>
             </div>
             <div class="card-body">
               <div class="card-text"><%= simple_format(@article.description) %></div>
