@@ -1,11 +1,23 @@
-# README
+# Ruby on Rails Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Associations
+- One-to-many
+  between users and articles
 
-Things you may want to cover:
+REST for users
 
-* Ruby version
+Authentication
+- Login using secure password
+
+Restriction of actions
+- Based on logged in/logged out state
+
+Security
+- Admin user functionality and access level
+
+Things you should know:
+
+* Ruby Version Manager
 
 * System dependencies
 
