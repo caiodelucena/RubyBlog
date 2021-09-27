@@ -1,25 +1,23 @@
 <h2 class="text-center mt-4"><%= @article.title %></h2>
-<table>
-  <tbody>
-      <div class="row justify-content-md-center">
-        <div class="col-6 mt-4">
-          <div class="card text-center shadow mb-5 bg-white rounded">
-            <div class="card-header font-italic">
-              <% if @article.user %>
-                <%= image_tag "foto.jpg", size: 50, class:"rounded-circle mx-auto d-block shadow" %>
-                by <%= link_to @article.user.username.capitalize, @article.user, class: "text-dark" %>
-              <% end %>
-            </div>
-            <div class="card-body">
-              <div class="card-text"><%= simple_format(@article.description) %></div>
-              <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-primary" %>
-              <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-outline-danger" %>
-            </div>
-            <div class="card-footer text-muted">
-              <small>Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago.</small>
-            </div>
-          </div>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-6 mt-4">
+      <div class="card text-center shadow mb-5 bg-white rounded">
+        <div class="card-header font-italic">
+          <% if @article.user %>
+            <%= image_tag "foto.jpg", size: 50, class:"rounded-circle mx-auto d-block shadow" %>
+            by <%= link_to @article.user.username.capitalize, @article.user, class: "text-dark" %>
+          <% end %>
+        </div>
+        <div class="card-body">
+          <div class="card-text"><%= simple_format(@article.description) %></div>
+          <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-primary" %>
+          <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-outline-danger" %>
+        </div>
+        <div class="card-footer text-muted">
+          <small>Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago.</small>
         </div>
       </div>
-  </tbody>
-</table>
+    </div>
+  </div>
+</div>
