@@ -13,8 +13,10 @@
               <%= link_to(image_tag("foto.jpg", size: 180,  class:"rounded mx-auto d-block shadow"), user_path(user)) %>
             </h5>
             <p class="card-text"><%= pluralize(user.articles.count, "article")%></p>
-            <%= link_to "View profile", user_path(user), class: "btn btn-outline-success" %>
-            <%= link_to "Edit profile", edit_user_path(user), class: "btn btn-outline-primary" %>
+            <%= link_to "View profile", user_path(user), class: "btn btn-outline-success" %>  
+            <% if logged_in? && user == current_user %>
+              <%= link_to "Edit profile", edit_user_path(user), class: "btn btn-outline-primary" %>
+            <% end %>
           </div>
           <div class="card-footer text-muted">
             <small>Joined <%= time_ago_in_words(user.created_at) %> ago.</small>
@@ -25,5 +27,5 @@
   <% end %>
 </div>
 <div class="flickr_pagination">
-  <%= will_paginate @articles, :container => false %>
+  <%= will_paginate @users, :container => false %>
 </div>
